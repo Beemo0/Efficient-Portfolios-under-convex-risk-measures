@@ -38,18 +38,18 @@ discrete-time, and continuous-time settings.
 The project is divided into five parts, corresponding to the main
 numerical developments:
 
-* **Part 1 — Mono-period portfolio optimisation:** AVaR-efficient portfolios,
+* **Part 1 Mono-period portfolio optimisation:** AVaR-efficient portfolios,
   the finite-scenario linear-programming formulation, and comparison with
   the classical Markowitz frontier.
-* **Part 2 — Dynamic risk measures:** recursive conditional AVaR, time
+* **Part 2 Dynamic risk measures:** recursive conditional AVaR, time
   consistency, and numerical search for divergence between recursive and
   naive terminal risk assessments.
-* **Part 3 — Continuous-time optimisation:** constant-mix strategies,
+* **Part 3 Continuous-time optimisation:** constant-mix strategies,
   closed-form AVaR, exact Monte Carlo validation, and the AVaR correction
   to the classical Merton myopic proportion.
-* **Part 4 — Downside risk:** comparison between AVaR, Markowitz variance,
+* **Part 4 Downside risk:** comparison between AVaR, Markowitz variance,
   and Harlow's lower partial moments under Gaussian and skewed returns.
-* **Part 5 — Distributionally-robust AVaR:** bootstrap-based risk estimation,
+* **Part 5 Distributionally-robust AVaR:** bootstrap-based risk estimation,
   coherence tests, and the optimizer's-curse experiment.
 
 ## Repository Structure
@@ -275,31 +275,31 @@ properties expected from coherent risk measures.
 
 ## Notebooks
 
-### Part 1 — Mono-Period Portfolio Optimisation
+### Part 1 Mono-Period Portfolio Optimisation
 
 | Notebook                             | Description                                                                         | Key outputs                                                                                            |
 | ------------------------------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | `01_mono_period_avar_frontier.ipynb` | Finite-scenario AVaR optimisation compared with the closed-form Markowitz portfolio | AVaR-efficient frontier, Markowitz frontier, portfolio-weight errors under Gaussian and skewed returns |
 
-### Part 2 — Dynamic Risk Measures
+### Part 2 Dynamic Risk Measures
 
 | Notebook                             | Description                                                                                               | Key outputs                                                                       |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | `02_discrete_time_consistency.ipynb` | Comparison between naive terminal AVaR and recursively composed conditional AVaR on binary scenario trees | Time-consistency checks, divergence distributions, largest random-tree divergence |
 
-### Part 3 — Continuous-Time Optimisation
+### Part 3 Continuous-Time Optimisation
 
 | Notebook                                | Description                                                                                            | Key outputs                                                                                                 |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
 | `03_continuous_time_constant_mix.ipynb` | Validation of the closed-form constant-mix AVaR formula and analytical optimum using exact Monte Carlo | Closed-form vs. Monte Carlo AVaR, residuals, optimal risky proportion, horizon and confidence-level effects |
 
-### Part 4 — Downside Risk
+### Part 4 Downside Risk
 
 | Notebook                            | Description                                                              | Key outputs                                                                   |
 | ----------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
 | `04_downside_risk_comparison.ipynb` | Comparison of AVaR, Markowitz variance, and Harlow lower partial moments | Efficient frontiers, portfolio weights, Gaussian vs. skewed-return comparison |
 
-### Part 5 — Distributionally-Robust AVaR
+### Part 5 Distributionally-Robust AVaR
 
 | Notebook                                | Description                                                                  | Key outputs                                                                              |
 | --------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
@@ -311,17 +311,17 @@ properties expected from coherent risk measures.
 
 | Experiment                            | Result                                                                                                                                                          |
 | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **E1 — Mono-period Gaussian**         | AVaR and Markowitz frontiers essentially overlap, with a mean relative portfolio-weight error of **4.44%** across the tested targets.                           |
-| **E2 — Mono-period skewed**           | Replacing one Gaussian marginal with a left-skewed distribution increases the mean relative weight error to **34.5%**, while preserving the Markowitz frontier. |
-| **E3 — Continuous-time AVaR**         | Closed-form AVaR and exact Monte Carlo estimates agree with a maximum relative error of **0.24%** across the tested constant-mix proportions.                   |
-| **E3 — Continuous-time optimum**      | The analytical optimum is (\pi^*=1.8788), compared with a grid-search optimum of (\pi^*=1.8785).                                                                |
-| **E3 — Long-horizon behaviour**       | The AVaR correction decreases as (T) increases, and the optimal risky proportion converges towards the Merton myopic proportion.                                |
-| **E3 — Confidence-level behaviour**   | The AVaR correction vanishes as (\lambda\to1), recovering the classical expected-return criterion.                                                              |
-| **E4 — Discrete-time consistency**    | Recursive and naive AVaR can differ substantially on general binary scenario trees; the largest absolute divergence found numerically is **2.80**.              |
-| **E4 — Random-tree search**           | **37%** of the tested random trees exhibit a relative divergence greater than **10%**.                                                                          |
-| **E5 — Distributionally-robust AVaR** | Bootstrap-sup produces a coherent but conservative risk estimator and can substantially overcorrect the optimizer's curse.                                      |
-| **E5 — Nested bootstrap**             | Nested bootstrap improves empirical bias calibration in the controlled experiment but does not preserve full coherence.                                         |
-| **E5 — Coherence tests**              | Bootstrap-sup satisfies the tested coherence properties, whereas the better-calibrated bootstrap variants do not retain full positive homogeneity.              |
+| **E1 Mono-period Gaussian**         | AVaR and Markowitz frontiers essentially overlap, with a mean relative portfolio-weight error of **4.44%** across the tested targets.                           |
+| **E2 Mono-period skewed**           | Replacing one Gaussian marginal with a left-skewed distribution increases the mean relative weight error to **34.5%**, while preserving the Markowitz frontier. |
+| **E3 Continuous-time AVaR**         | Closed-form AVaR and exact Monte Carlo estimates agree with a maximum relative error of **0.24%** across the tested constant-mix proportions.                   |
+| **E3 Continuous-time optimum**      | The analytical optimum is (\pi^*=1.8788), compared with a grid-search optimum of (\pi^*=1.8785).                                                                |
+| **E3 Long-horizon behaviour**       | The AVaR correction decreases as (T) increases, and the optimal risky proportion converges towards the Merton myopic proportion.                                |
+| **E3 Confidence-level behaviour**   | The AVaR correction vanishes as (\lambda\to1), recovering the classical expected-return criterion.                                                              |
+| **E4 Discrete-time consistency**    | Recursive and naive AVaR can differ substantially on general binary scenario trees; the largest absolute divergence found numerically is **2.80**.              |
+| **E4 Random-tree search**           | **37%** of the tested random trees exhibit a relative divergence greater than **10%**.                                                                          |
+| **E5 Distributionally-robust AVaR** | Bootstrap-sup produces a coherent but conservative risk estimator and can substantially overcorrect the optimizer's curse.                                      |
+| **E5 Nested bootstrap**             | Nested bootstrap improves empirical bias calibration in the controlled experiment but does not preserve full coherence.                                         |
+| **E5 Coherence tests**              | Bootstrap-sup satisfies the tested coherence properties, whereas the better-calibrated bootstrap variants do not retain full positive homogeneity.              |
 
 
 ## Requirements
