@@ -114,27 +114,19 @@ The module provides:
 
 For a Gaussian position
 
-[
-X \sim \mathcal{N}(m,\sigma^2),
-]
+$[X \sim \mathcal{N}(m,\sigma^2),]
 
 the AVaR admits the closed-form expression
 
-[
-\operatorname{AVaR}_{\lambda}(X)
+$[\operatorname{AVaR}_{\lambda}(X)
 ================================
-
--m+\kappa(\lambda)\sigma,
-]
+-m+\kappa(\lambda)\sigma,]$
 
 where
 
-[
-\kappa(\lambda)
+$[\kappa(\lambda)
 ===============
-
-\frac{\phi\left(\Phi^{-1}(\lambda)\right)}{\lambda}.
-]
+\frac{\phi\left(\Phi^{-1}(\lambda)\right)}{\lambda}.]$
 
 This formula is used throughout the project to derive analytical
 benchmarks and validate numerical optimisation procedures.
@@ -149,18 +141,13 @@ efficient frontier.
 
 For a portfolio (\pi) and excess-return vector
 
-[
-R-r_f\mathbf{1},
-]
+$[R-r_f\mathbf{1},]$
 
 the terminal excess position is
 
-[
-Y_{\pi}
+[Y_{\pi}
 =======
-
-x_0\pi^\top(R-r_f\mathbf{1}).
-]
+x_0\pi^\top(R-r_f\mathbf{1}).]$
 
 Under a finite scenario distribution, the AVaR problem can therefore be
 formulated as a linear program. The resulting AVaR-efficient portfolios
@@ -219,14 +206,10 @@ The module implements:
 
 When the optimal risky proportion is positive,
 
-[
-\pi^*(\lambda,T)
+$[\pi^*(\lambda,T)
 ================
-
 ## \frac{\mu-r}{\sigma^2}
-
-\frac{\kappa(\lambda)}{\sigma\sqrt{T}}.
-]
+\frac{\kappa(\lambda)}{\sigma\sqrt{T}}.]$
 
 The first term corresponds to the classical Merton myopic proportion,
 while the second term is the explicit AVaR risk-aversion correction.
